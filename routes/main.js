@@ -3,22 +3,22 @@ __path = process.cwd()
 var express = require('express');
 var router = express.Router();
 
-router.get('', (req, res) => {
-    res.sendFile(__path + '/views/home.html')
-})
-router.get('/api', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(__path + '/views/index.html')
 })
+router.get('/docs', (req, res) => {
+    res.sendFile(__path + '/views/docs.html')
+})
 
-router.get('/api/game', (req, res) => {
+router.get('/docs/api/game', (req, res) => {
     res.sendFile(__path + '/views/game.html')
 })
 
-router.get('/api/tutorial', (req, res) => {
+router.get('/docs/api/tutorial', (req, res) => {
     res.sendFile(__path + '/views/tutorial.html')
 })
 
-router.get('/api/status', async(req, res) => {  
+router.get('/docs/api/status', async(req, res) => {  
 
 var date = new Date
 var jam = date.getHours()
